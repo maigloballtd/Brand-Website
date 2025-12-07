@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M.A.I Global ltd</title>
+    <style>
+        /* CSS Variables for Final Color Scheme: Dark Green, Black, and Gold */
+        :root {
+            --color-primary: #0B4F35;      /* Deep Forest Green */
+            --color-gold: #FFD700;         /* Bright Gold Accent */
+            --color-text-light: #FFFFFF;   /* White */
+            --color-text-dark: #1C1C1C;    /* Deep Black/Dark Gray */
+            --color-background-dark: #1C1C1C; /* Deep Black/Dark Gray */
+            --color-background-light: #FFFFFF; /* Pure White */
+        }
+
+        /* Base Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: var(--color-text-dark);
+            background-color: var(--color-background-light);
+        }
+
+        /* Header and Navigation (Dark Green Background) */
+        .header {
+            background-color: var(--color-primary); 
+            color: var(--color-text-light);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between; 
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Container for Logo and Tagline */
+        .brand-identity {
+            display: flex;
+            align-items: center;
+            gap: 15px; 
+        }
+
+        /* TAGLINE STYLING - Italic, Gold, Shifted Right, in Quotes */
+        .tagline {
+            font-size: 1.1em;
+            font-weight: 500;
+            color: var(--color-gold); 
+            white-space: nowrap; 
+            font-family: Georgia, 'Times New Roman', Times, serif; 
+            font-style: italic; 
+            margin-left: 10px; 
+        }
+
+        /* Style for the logo image */
+        .logo {
+            height: 70px; 
+            width: auto;
+        }
+
+        .nav-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .nav-list li {
+            margin-left: 25px;
+        }
+
+        .nav-list a {
+            color: var(--color-text-light);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s, border-bottom 0.3s;
+            padding-bottom: 3px;
+        }
+
+        .nav-list a:hover {
+            color: var(--color-gold); 
+            border-bottom: 2px solid var(--color-gold); 
+        }
+
+        /* Hero Section (Dark Green Overlay) - With Luxury-Tech Image */
+        .hero {
+            background: linear-gradient(rgba(11, 79, 53, 0.8), rgba(11, 79, 53, 0.8)), url('http://googleusercontent.com/image_collection/image_retrieval/10716003654501531157_0');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--color-text-light); 
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            color: var(--color-gold); 
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .cta-button {
+            background-color: var(--color-gold); 
+            color: var(--color-primary); 
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .cta-button:hover {
+            background-color: var(--color-text-light); 
+            color: var(--color-primary);
+            transform: translateY(-2px); 
+        }
+
+        /* Main Content Sections */
+        .section {
+            padding: 40px 5%;
+            text-align: center;
+        }
+
+        /* White background section (About & Contact Sections) */
+        .section:nth-child(even) {
+            background-color: var(--color-background-light); 
+        }
+
+        /* Dark background section (Black/Dark Gray) */
+        .section:nth-child(odd) {
+            background-color: var(--color-background-dark); 
+            color: var(--color-text-light);
+        }
+        
+        /* Service section is manually set to black for strong contrast */
+        #services {
+            background-color: var(--color-background-dark) !important;
+            color: var(--color-text-light);
+        }
+
+        .section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: var(--color-primary); /* Dark Green Heading on White BG */
+        }
+
+        /* Dark background headings are Gold */
+        .section:nth-child(odd) h2 {
+            color: var(--color-gold); 
+        }
+        
+        /* Heading for Services on Dark Background */
+        #services h2 {
+            color: var(--color-gold) !important; 
+        }
+
+        /* Mission/Vision Section Styling */
+        .mission-vision-container {
+            display: flex;
+            justify-content: space-around;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: left;
+            margin-top: 30px;
+        }
+        
+        .statement {
+            width: 45%;
+            padding: 15px;
+            border-left: 4px solid var(--color-gold); /* Gold accent line */
+        }
+
+        .statement h3 {
+            color: var(--color-primary); 
+            margin-top: 0;
+        }
+        
+        /* Mission/Vision Subheadings on Dark Background */
+        #purpose .statement h3 {
+            color: var(--color-gold) !important; 
+        }
+
+        /* Footer (Dark Green) */
+        .footer {
+            background-color: var(--color-primary); 
+            color: var(--color-text-light);
+            text-align: center;
+            padding: 20px 5%;
+        }
+        
+        /* Utility for Editability - Borders Removed */
+        .editable {
+            padding: 5px;
+            cursor: default;
+        }
+        
+        /* Intractability via Transitions and Shadows */
+        .card-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background-color: var(--color-background-light); 
+            color: var(--color-text-dark);
+            padding: 20px;
+            width: 40%;
+            max-width: 450px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: left;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 0 5px var(--color-gold); 
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="brand-identity">
+            <img src="MAI global two.jpg" alt="M.A.I Global Logo" class="logo">
+            <span class="tagline">"Modern Ambition & Innovation."</span>
+        </div>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#purpose">Purpose</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="editable">Where Vision Meets Execution</h1>
+            <p class="editable">M.A.I Global is the lifestyle, digital, and innovation division of M.A.I Group — representing the modern intersection of business, design, and technology.</p>
+            <a href="#services" class="cta-button">Explore Our Services</a>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <h2 class="editable">Who We Are</h2>
+        <p class="editable" style="max-width: 800px; margin: 0 auto;">
+            **M.A.I Global** operates at the forefront of modern business, established on the principles of **Integrity, Innovation, and Excellence**. Our dedicated team works tirelessly to provide tailored, sustainable solutions for our clients worldwide, building digital empires where **ideas become digital empires**.
+        </p>
+    </section>
+
+    <section id="purpose" class="section">
+        <h2 class="editable">Our Purpose</h2>
+        <div class="mission-vision-container">
+            <div class="statement">
+                <h3 class="editable">Mission Statement</h3>
+                <p class="editable">To inspire and equip the next generation of entrepreneurs through content, automation, and digital systems — turning creativity and technology into freedom, purpose, and progress.</p>
+            </div>
+            <div class="statement">
+                <h3 class="editable">Vision Statement</h3>
+                <p class="editable">To become a global symbol of modern success — a luxury-tech brand that empowers dreamers to build, scale, and own their future.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="services" class="section">
+        <h2 class="editable">Our Core Services</h2>
+        <div class="card-container">
+            <div class="card editable">
+                <h3>AI Automation Services</h3>
+                <p>Streamline operations and drive efficiency using Artificial Intelligence integration.</p>
+                <p>Some of the options to choose from are listed below:</p>
+                <p> - AI Branding and Social Media Setup</p>
+                <p> Ranging from £75 - £150</p>
+            </div>
+            <div class="card editable">
+                <h3>Digital Brand Building Services</h3>
+                <p>Craft and execute influential **digital brand** presence through design and strategy.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section" style="padding-bottom: 60px; background-color: var(--color-background-light);">
+        <h2 class="editable">Get In Touch</h2>
+        <p class="editable">(A Friendly reminder for all our Clients once you click on the 'contact us' button, it will take you to gmail, in order to get back to the website you have to use the back arrow on your browser to get back to the homepage of the website.)</p>
+        <p class="editable">Ready to start your next project with us? Contact our team today.</p>
+        <a href="mailto:contact.maiglobal.ltd@gmail.com" class="cta-button" style="margin-top: 10px;">Contact Us</a>
+    </section>
+
+    <footer class="footer">
+        <p class="editable">&copy; 2025 M.A.I Global ltd. All rights reserved.</p>
+        <p class="editable">&copy; M.A.I Global ltd is a proud member of The M.A.I Group ltd. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
